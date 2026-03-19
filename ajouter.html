@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ajouter un étudiant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/etudiants.css"/>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-premier">
+      <h1>Gestion des Étudiants</h1>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="form-card">
+
+      <div class="form-card-header">
+        <a href="etudiants.html" class="back-link">← Retour à la liste</a>
+        <h2 id="form-titre">Ajouter un étudiant</h2>
+      </div>
+
+      <div id="message-retour" class="message-retour"></div>
+
+      <form id="form-etudiant" novalidate>
+
+        <div class="form-grid">
+
+          <div class="field">
+            <label>Nom <span class="req">*</span></label>
+            <input type="text" id="f-nom" name="nom" placeholder="Ex : TOSSA"/>
+            <span class="msg-erreur" id="err-nom"></span>
+          </div>
+
+          <div class="field">
+            <label>Prénom <span class="req">*</span></label>
+            <input type="text" id="f-prenom" name="prenom" placeholder="Ex : Yoann"/>
+            <span class="msg-erreur" id="err-prenom"></span>
+          </div>
+
+          <div class="field">
+            <label>Email <span class="req">*</span></label>
+            <input type="email" id="f-email" name="email" placeholder="Ex : yoann@gmail.com"/>
+            <span class="msg-erreur" id="err-email"></span>
+          </div>
+
+          <div class="field">
+            <label>Téléphone <span class="req">*</span></label>
+            <input type="tel" id="f-telephone" name="telephone" placeholder="Ex : +229 01 54 32 53 24"/>
+            <span class="msg-erreur" id="err-telephone"></span>
+          </div>
+
+          <div class="field">
+            <label>Filière <span class="req">*</span></label>
+            <select id="f-filiere" name="filiere">
+              <option value="">-- Sélectionner --</option>
+              <option>Génie Informatique</option>
+              <option>Génie Civil</option>
+              <option>Anglais</option>
+              <option>Lettre Moderne</option>
+              <option>Chinois</option>
+            </select>
+            <span class="msg-erreur" id="err-filiere"></span>
+          </div>
+
+        </div>
+
+        <div class="form-actions">
+          <a href="etudiants.html" class="btn btn--secondaire">Annuler</a>
+          <button type="button" class="btn btn--or" onclick="sauvegarder()">Enregistrer</button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

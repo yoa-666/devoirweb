@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestion des Étudiants</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/etudiants.css"/>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-premier">
+      <h1>Gestion des Étudiants</h1>
+      <span class="stat-badge">
+        <span id="compteur">0</span> étudiant<span id="pluriel"></span>
+      </span>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div id="flash" class="flash" style="display:none;"></div>
+
+    <div class="toolbar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="recherche" placeholder="Rechercher par Nom ou Filière" autocomplete="off"/>
+      </div>
+      <a href="ajouter.html" class="btn btn--or">✦ Ajouter un étudiant</a>
+    </div>
+
+    <div id="msg-vide" class="msg-vide" style="display:none;">
+      <span class="msg-vide-icon">🎓</span>
+      <p>Aucun étudiant trouvé.</p>
+    </div>
+
+    <div class="tableau" id="tableau" style="display:none;">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nom & Prénom</th>
+            <th>Email</th>
+            <th>Téléphone</th>
+            <th>Filière</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="corps-tableau"></tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <div class="modal-overlay" id="modal-suppr" style="display:none;">
+    <div class="modal modal--sm">
+      <div class="modal-icon">🗑️</div>
+      <h3>Supprimer cet étudiant ?</h3>
+      <p>Cette action est irréversible.</p>
+      <div class="modal-actions">
+        <button class="btn btn--secondaire" onclick="fermerModalSuppr()">Annuler</button>
+        <button class="btn btn--danger" onclick="confirmerSuppression()">Supprimer</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
